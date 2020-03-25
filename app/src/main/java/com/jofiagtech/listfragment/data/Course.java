@@ -9,6 +9,11 @@ public class Course {
     public Course() {
     }
 
+    public Course(String courseName, String courseImage) {
+        this.courseName = courseName;
+        this.courseImage = courseImage;
+    }
+
     private int getImageRessourceId(Context context){
         return context.getResources().getIdentifier(this.courseName, "drawable", context.getPackageName());
     }
