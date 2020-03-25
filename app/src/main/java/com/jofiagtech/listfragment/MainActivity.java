@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.container);
 
-        if (fragment == null){
+        /*if (fragment == null){
             fragment = new MainFragment();
             fragmentManager.beginTransaction().add(R.id.container, fragment).commit();
         }*/

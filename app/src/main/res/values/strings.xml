@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ListFragment</string>
     <string name="image">Image</string>
+    <string name="course_1">Course 1</string>
 </resources>
