@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Fragment extends androidx.fragment.app.Fragment {
+public class MyFragment extends androidx.fragment.app.Fragment {
 
-    public Fragment(){
+    public MyFragment(){
     }
 
     @Nullable

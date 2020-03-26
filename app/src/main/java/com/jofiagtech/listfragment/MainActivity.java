@@ -17,8 +17,10 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = fragmentManager.findFragmentById(R.id.container);
 
         if (fragment == null){
-            fragment = new Fragment();
-            fragmentManager.beginTransaction().add(R.id.container, fragment).commit();
+            fragment = new MyFragment();
+            fragmentManager.beginTransaction()
+                    .add(R.id.container, fragment)
+                    .commit();
         }
     }
 }
