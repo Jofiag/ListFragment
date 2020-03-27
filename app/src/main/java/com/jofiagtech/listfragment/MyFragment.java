@@ -8,9 +8,26 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.jofiagtech.listfragment.data.Course;
+import com.jofiagtech.listfragment.data.CourseArrayAdapter;
+import com.jofiagtech.listfragment.data.CourseData;
+
+import java.util.List;
+
 public class MyFragment extends androidx.fragment.app.ListFragment {
+    List<Course> mCourseList = new CourseData().getCourseList();
 
     public MyFragment(){
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        CourseArrayAdapter arrayAdapter = new CourseArrayAdapter(getActivity(),
+                R.layout.item, mCourseList);
+
+        setListAdapter(arrayAdapter);
     }
 
     @Nullable
