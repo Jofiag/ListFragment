@@ -1,6 +1,7 @@
 package com.jofiagtech.listfragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.jofiagtech.listfragment.Util.ScreenUtility;
 import com.jofiagtech.listfragment.data.Course;
 import com.jofiagtech.listfragment.data.CourseArrayAdapter;
 import com.jofiagtech.listfragment.data.CourseData;
@@ -23,6 +25,10 @@ public class MyFragment extends androidx.fragment.app.ListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ScreenUtility screenUtility = new ScreenUtility(getActivity());
+
+        Log.d("Screen", "onCreate: " + screenUtility.getDisplayWidth() + ", " + screenUtility.getDisplayHeight());
 
         CourseArrayAdapter arrayAdapter = new CourseArrayAdapter(getActivity(),
                 R.layout.item, mCourseList);
