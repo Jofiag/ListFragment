@@ -5,18 +5,18 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <fragment
         android:id="@+id/course_list_fragment"
-        android:name="com.jofiagtech.listfragment.CourseListFragment"
+        android:name="com.jofiagtech.listfragment.fragment.CourseListFragment"
         tools:layout="@layout/course_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <!--<course_list_fragment
         android:id="@+id/course_list_fragment"
-        android:name="com.jofiagtech.listfragment.CourseListFragment"
+        android:name="com.jofiagtech.listfragment.fragment.CourseListFragment"
         tools:layout="@layout/course_list_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>-->

@@ -1,5 +1,7 @@
 package com.jofiagtech.listfragment.data;
 
+import com.jofiagtech.listfragment.model.Course;
+
 import java.util.ArrayList;
 
 public class CourseData {

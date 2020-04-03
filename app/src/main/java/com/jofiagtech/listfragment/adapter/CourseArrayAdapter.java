@@ -1,4 +1,4 @@
-package com.jofiagtech.listfragment.data;
+package com.jofiagtech.listfragment.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.jofiagtech.listfragment.R;
+import com.jofiagtech.listfragment.model.Course;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.jofiagtech.listfragment.data;
+package com.jofiagtech.listfragment.model;
 
 import android.content.Context;
 

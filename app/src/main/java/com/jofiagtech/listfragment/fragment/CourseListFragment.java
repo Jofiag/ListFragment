@@ -1,4 +1,4 @@
-package com.jofiagtech.listfragment;
+package com.jofiagtech.listfragment.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +9,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.jofiagtech.listfragment.R;
 import com.jofiagtech.listfragment.Util.ScreenUtility;
-import com.jofiagtech.listfragment.data.Course;
-import com.jofiagtech.listfragment.data.CourseArrayAdapter;
+import com.jofiagtech.listfragment.model.Course;
+import com.jofiagtech.listfragment.adapter.CourseArrayAdapter;
 import com.jofiagtech.listfragment.data.CourseData;
 
 import java.util.List;

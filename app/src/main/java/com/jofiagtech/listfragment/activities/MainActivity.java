@@ -1,10 +1,12 @@
-package com.jofiagtech.listfragment;
+package com.jofiagtech.listfragment.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+
+import com.jofiagtech.listfragment.R;
 
 public class MainActivity extends AppCompatActivity {
 
