@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
 
     <fragment
         android:id="@+id/course_list_fragment"
         android:name="com.jofiagtech.listfragment.CourseListFragment"
         tools:layout="@layout/course_list_fragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/course_details"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"/>
 
     <!--<course_list_fragment
@@ -21,4 +29,4 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>-->
 
-</FrameLayout>
+</LinearLayout>

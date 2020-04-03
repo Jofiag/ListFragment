@@ -13,13 +13,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //addFragment(new CourseListFragment(), R.id.container);
+    }
+
+    private void addFragment(Fragment fragmentToAdd, int container){
         FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment = fragmentManager.findFragmentById(R.id.container);
+        Fragment fragment = fragmentManager.findFragmentById(container);
 
         if (fragment == null){
-            fragment = new MyFragment();
+            fragment = fragmentToAdd;
             fragmentManager.beginTransaction()
-                    .add(R.id.container, fragment)
+                    .add(container, fragment)
                     .commit();
         }
     }
