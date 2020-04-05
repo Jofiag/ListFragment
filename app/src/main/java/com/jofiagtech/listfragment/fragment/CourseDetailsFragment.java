@@ -12,12 +12,25 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.jofiagtech.listfragment.R;
+import com.jofiagtech.listfragment.data.CourseData;
 import com.jofiagtech.listfragment.model.Course;
 
 public class CourseDetailsFragment extends Fragment {
     Course mCourse;
 
     public CourseDetailsFragment() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Bundle extra = getArguments();
+        if (extra != null && extra.containsKey("course_id")){
+            int position = extra.getInt("course_id");
+            mCourse = new CourseData().getCourseList().get(position);
+        }
+
     }
 
     @Nullable

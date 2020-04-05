@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.jofiagtech.listfragment.R;
 import com.jofiagtech.listfragment.fragment.CourseDetailsFragment;
@@ -17,18 +18,19 @@ public class CourseDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_course_details);
 
         if (savedInstanceState == null){
-            addFragment(new CourseDetailsFragment(), R.id.course_details_container);
-        }
-    }
+            Bundle extra = getIntent().getExtras();
+            if (extra != null){
+                int position = extra.getInt("course_id");
+                Toast.makeText(getApplication(), "Position " + position, Toast.LENGTH_SHORT)
+                        .show();
+            }
 
-    private void addFragment(Fragment fragmentToAdd, int container){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment = fragmentManager.findFragmentById(container);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            CourseDetailsFragment fragment = new CourseDetailsFragment();
+            fragment.setArguments(extra);
 
-        if (fragment == null){
-            fragment = fragmentToAdd;
             fragmentManager.beginTransaction()
-                    .add(container, fragment)
+                    .add(R.id.course_details_container, fragment)
                     .commit();
         }
     }
