@@ -10,16 +10,20 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.jofiagtech.listfragment.R;
+import com.jofiagtech.listfragment.fragment.CourseDetailsFragment;
 import com.jofiagtech.listfragment.fragment.CourseListFragment;
 import com.jofiagtech.listfragment.model.Course;
 
 public class MainActivity extends AppCompatActivity implements CourseListFragment.Callbacks {
+    private boolean isTwoPane = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (findViewById(R.id.course_details_container) != null)
+            isTwoPane = true;
     }
 
     private void addFragment(Fragment fragmentToAdd, int container){
@@ -37,10 +41,23 @@ public class MainActivity extends AppCompatActivity implements CourseListFragmen
 
     @Override
     public void onItemSelected(Course course, int position) {
-        Toast.makeText(getApplication(), "Course", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(MainActivity.this, CourseDetailsActivity.class);
-        intent.putExtra("course_id", position);
-        startActivity(intent);
+        if (isTwoPane){
+           FragmentManager fragmentManager = getSupportFragmentManager();
+           CourseDetailsFragment fragment = new CourseDetailsFragment();
+
+           Bundle extra = new Bundle();
+           extra.putInt("course_id", position);
+           fragment.setArguments(extra);
+
+           fragmentManager.beginTransaction().replace(R.id.course_details_container, fragment)
+                   .commit();
+        }
+        else{
+            Intent intent = new Intent(MainActivity.this, CourseDetailsActivity.class);
+            intent.putExtra("course_id", position);
+            startActivity(intent);
+        }
+
     }
 }

@@ -17,7 +17,7 @@
         android:layout_height="match_parent"/>
 
     <FrameLayout
-        android:id="@+id/course_details"
+        android:id="@+id/course_details_container"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"/>
