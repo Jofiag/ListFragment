@@ -43,4 +43,8 @@ public class CourseListFragment extends androidx.fragment.app.ListFragment {
         View view = inflater.inflate(R.layout.course_list_fragment, container, false);
         return view;
     }
+
+    public interface Callback{
+        public void onItemSelected(Course course);
+    }
 }

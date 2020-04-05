@@ -5,10 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.jofiagtech.listfragment.R;
+import com.jofiagtech.listfragment.fragment.CourseListFragment;
+import com.jofiagtech.listfragment.model.Course;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CourseListFragment.Callback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +32,11 @@ public class MainActivity extends AppCompatActivity {
                     .add(container, fragment)
                     .commit();
         }
+    }
+
+    @Override
+    public void onItemSelected(Course course) {
+        Log.d("Interface", "onItemSelected: succes");
+        Toast.makeText(this, "onItemSelected", Toast.LENGTH_SHORT).show();
     }
 }

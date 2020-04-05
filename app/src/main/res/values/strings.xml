@@ -4,7 +4,6 @@
     <string name="course_1">Course 1</string>
     <string name="you_re_in_the_fragment">You\'re in the fragment</string>
     <string name="course_name">Course name</string>
-    <string name="image">Image</string>
     <string name="here_is_the_course_text">Here is the course text ...</string>
     <string name="description_text">Here is the course description ...</string>
 </resources>
